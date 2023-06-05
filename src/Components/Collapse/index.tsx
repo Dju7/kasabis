@@ -1,9 +1,9 @@
 import arrow from "../../assets/arrow.png";
-import { useState } from "react";
+import { useState, PropsWithChildren } from "react";
 
-interface CollapseProps {
+
+interface CollapseProps extends PropsWithChildren {
   title: string;
-  children: React.ReactNode;
 }
 
 function Collapse({ title, children }: CollapseProps) {

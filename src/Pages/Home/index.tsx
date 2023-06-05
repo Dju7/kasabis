@@ -14,7 +14,6 @@ interface Lodging {
   
   function Home() {
     const lodgings = useLoaderData() as Lodging [];
-  console.log(lodgings);
   return (
     <div>
       <Banner />

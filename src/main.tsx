@@ -4,7 +4,7 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 import App from './App.tsx'
 import Home, { loader as homeloader } from './Pages/Home'
 import About from './Pages/About'
-import Logements from './Pages/Logements'
+import Logements, { loader as lodgingloader } from './Pages/Logements'
 import Error from './Components/Error'
 import './index.css'
 
@@ -13,7 +13,7 @@ const Router = createBrowserRouter (
     <Route path='/' element={<App />}>
       <Route index element={<Home />} loader={homeloader} />
       <Route path="About" element={<About />} />
-      <Route path="Logements/:id" element={<Logements />} />
+      <Route path="Logements/:id" element={<Logements />} loader={lodgingloader} />
       <Route path="*" element={<Error />} />
     </Route>
   )
