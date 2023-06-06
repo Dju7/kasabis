@@ -6,21 +6,41 @@ type MyParams = {
     params: any;
   };
 
-
-export const loader = async ({ params }: MyParams) => {
-    const { id } = params;
-    const lodging = lodgings.find((lodging) => lodging.id === id);
-    return lodging || null;
+  type lodging = {
+    id: string;
+    title: string;
+    cover: string;
+    pictures: string[];
+    description: string;
+    host: {
+      name: string;
+      picture: string;
+    };
+    rating: string;
+    location: string;
+    equipments: string[];
+    tags: string[];
   };
+
+ 
+export const loader = async ({ params }: MyParams) => {
+    const { id } = await params;
+    const lodging = lodgings.find((lodging) => lodging.id === id);
+    if (!lodging) {
+      throw new Error('le logement est introuvable');
+    }
+    return {lodging}
+  };
+  
 
 
 function Logements () {
-    const lodging = useLoaderData() as ReturnType<typeof loader>;
-    console.log(lodging);
-    return (
-        <div>
-            <h1>Logement</h1>
-        </div>
+    const { lodging }: {lodging: lodging} = useLoaderData()
+    console.log({lodging})
+   return (
+       <div>
+           <h1>{lodging.title}</h1>
+       </div>
     )
 }
 
