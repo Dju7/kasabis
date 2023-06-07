@@ -4,6 +4,7 @@ import Caroussel from '../../Components/Carroussel'
 import Tag from '../../Components/Tag'
 import Host from '../../Components/Host'
 import Star from '../../Components/Star';
+import Collapse from '../../Components/Collapse'
 
 
 
@@ -49,7 +50,7 @@ export const loader = async ({ params }: MyParams) => {
     </section>
     <section className='flex flex-col my-4'>
         <div className='text-primary m-0'>
-          <h1 className='font-semibold m-0'>{lodging.title}</h1>
+          <h1 className='font-semibold m-0 text-3xl'>{lodging.title}</h1>
           <p className='mt-3'>{lodging.location}</p>
           <div className='flex flex-row gap-2 mt-2'>
             {lodging.tags.map((tag, index) => {
@@ -61,8 +62,8 @@ export const loader = async ({ params }: MyParams) => {
             })}
           </div>
         </div>
-        <div className='flex flex-row justify-between items-center'>
-          <div className='mt-4'>
+        <div className='flex flex-row justify-between items-center my-4'>
+          <div className='mt-4 mb-4'>
             <Star rating={lodging.rating} />
           </div>
           <div>
@@ -70,6 +71,22 @@ export const loader = async ({ params }: MyParams) => {
           </div>
         </div>
     </section>
+    <div className="grid grid-cols-2 gap-3 ">
+        <div >
+          <Collapse title="Description">
+            <p>{lodging.description}</p>
+          </Collapse>
+        </div>
+        <div>
+          <Collapse title="équipements">
+            <ul>
+              {lodging.equipments.map((equipement, index) => (
+                <li key={index}>{equipement}</li>
+              ))}
+            </ul>
+          </Collapse>
+        </div>
+      </div>
   </main>
   )
 }
