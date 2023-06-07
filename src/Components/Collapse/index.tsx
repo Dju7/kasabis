@@ -12,7 +12,7 @@ function Collapse({ title, children }: CollapseProps) {
   return (
     <div className="flex flex-col  mb-5">
       <div className="flex flex-row justify-between w-full h-[47px] rounded-[5px] bg-primary" onClick={() => setIsOpen(!isOpen)}>
-        <p className="text-white text-sm m-4">{title}</p>
+        <p className="text-white text-lg m-3">{title}</p>
         <img
           src={arrow}
           className={isOpen ? "m-4 w-5 h-3 ease-in-out duration-300" : "m-4 w-5 h-3 rotate-180 ease-in-out duration-300"}
@@ -20,7 +20,7 @@ function Collapse({ title, children }: CollapseProps) {
         />
       </div>
       <div
-        className={`${" grid grid-rows-0 overflow-hidden text-lg bg-slate-50 pl-2"} ${
+        className={`${" grid grid-rows-0 overflow-hidden text-lg bg-slate-50 text-primary pl-2"} ${
           isOpen ? "h-auto" : "h-0"
         }`}
       >

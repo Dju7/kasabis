@@ -6,7 +6,7 @@ type MyParams = {
     params: any;
   };
 
-  type lodging = {
+  type Lodging = {
     id: string;
     title: string;
     cover: string;
@@ -22,6 +22,7 @@ type MyParams = {
     tags: string[];
   };
 
+
  
 export const loader = async ({ params }: MyParams) => {
     const { id } = await params;
@@ -34,8 +35,8 @@ export const loader = async ({ params }: MyParams) => {
   
 
 
-function Logements () {
-    const { lodging }: {lodging: lodging} = useLoaderData()
+ function Logements () {
+    const { lodging }: {lodging: Lodging} =  useLoaderData() ;
     console.log({lodging})
    return (
        <div>
