@@ -39,7 +39,7 @@ import { Lodging } from '../../Type/Lodging';
           </div>
         </div>
     </section>
-    <div className="grid grid-cols-2 gap-3 ">
+    <div className="grid grid-cols-2 flex flex-col gap-3 ">
         <div >
           <Collapse title="Description">
             <p>{lodging.description}</p>
