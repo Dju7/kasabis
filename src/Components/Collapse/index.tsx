@@ -20,8 +20,8 @@ function Collapse({ title, children }: CollapseProps) {
         />
       </div>
       <div
-        className={`${" grid grid-rows-0 overflow-hidden text-lg bg-slate-50 text-primary pl-2"} ${
-          isOpen ? "h-auto" : "h-0"
+        className={`${"grid grid-rows-[0fr] overflow-hidden text-lg bg-slate-50 text-primary pl-2 pt-1"} ${
+          isOpen ? "grid-rows-[1fr] ease-in-out duration-300" : "grid-rows-[0fr] ease-in-out duration-300"
         }`}
       >
         <div className="overflow-hidden">{children}</div>

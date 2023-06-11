@@ -5,10 +5,10 @@ function Header () {
     return(
         <div className="flex justify-between items-center mb-3">
             <div>
-              <img src={Logo} className="my-7" />
+              <img src={Logo} className="my-7 w-36 lg:w-48" />
             </div>
             <div>
-               <nav className="space-x-20 text-xl text-primary">
+               <nav className="mr-3 space-x-8 uppercase text-sm lg:space-x-28 md:text-lg lg:text-xl  text-primary">
                   <NavLink
                      to="/"
                      className={({ isActive }) => (isActive ? "underline" : "")}

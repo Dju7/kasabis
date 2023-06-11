@@ -1,36 +1,15 @@
 import lodgings from '../../Datas/logements.json'
-import { useLoaderData } from 'react-router-dom';
+import { LoaderFunction, useLoaderData } from 'react-router-dom';
 import Caroussel from '../../Components/Carroussel'
 import Tag from '../../Components/Tag'
 import Host from '../../Components/Host'
 import Star from '../../Components/Star';
 import Collapse from '../../Components/Collapse'
-
-
-
-type MyParams = {
-    params: any;
-  };
-
-  export type Lodging = {
-    id: string;
-    title: string;
-    cover: string;
-    pictures: string[];
-    description: string;
-    host: {
-      name: string;
-      picture: string;
-    };
-    rating: string;
-    location: string;
-    equipments: string[];
-    tags: string[];
-  };
+import { Lodging } from '../../Type/Lodging';
 
  
-export const loader = async ({ params }: MyParams) => {
-    const { id } = await params;
+export const loader: LoaderFunction = async ({ params }) => {
+    const { id } = params;
     const lodging = lodgings.find((lodging) => lodging.id === id);
     if (!lodging) {
       throw new Error('le logement est introuvable');
@@ -38,7 +17,6 @@ export const loader = async ({ params }: MyParams) => {
     return lodging
   };
   
-
 
  function Logements () {
   const lodging =  useLoaderData() as Lodging;
