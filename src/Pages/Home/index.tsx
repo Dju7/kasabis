@@ -1,11 +1,8 @@
 import Banner from '../../Components/Banner';
-import Lodgings from '../../Datas/logements.json';
 import { Link, useLoaderData } from 'react-router-dom';
 import Card from '../../Components/Card';
 
-export const loader = async () => {
-  return Lodgings;
-};
+
 interface Lodging {
     id: string;
     cover: string;

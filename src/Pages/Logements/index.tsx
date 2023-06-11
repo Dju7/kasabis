@@ -1,5 +1,4 @@
-import lodgings from '../../Datas/logements.json'
-import { LoaderFunction, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import Caroussel from '../../Components/Carroussel'
 import Tag from '../../Components/Tag'
 import Host from '../../Components/Host'
@@ -8,15 +7,6 @@ import Collapse from '../../Components/Collapse'
 import { Lodging } from '../../Type/Lodging';
 
  
-export const loader: LoaderFunction = async ({ params }) => {
-    const { id } = params;
-    const lodging = lodgings.find((lodging) => lodging.id === id);
-    if (!lodging) {
-      throw new Error('le logement est introuvable');
-    }
-    return lodging
-  };
-  
 
  function Logements () {
   const lodging =  useLoaderData() as Lodging;
