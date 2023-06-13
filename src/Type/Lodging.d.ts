@@ -1,4 +1,5 @@
 export type Lodging = {
+   _id?: string;
     id: string;
     title: string;
     cover: string;
