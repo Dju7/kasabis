@@ -2,7 +2,7 @@ import { LoaderFunction } from 'react-router-dom';
 import axios from 'axios';
 import {Lodging} from '../Type/Lodging'
 
-  // Requête API 
+  // Connection API: Loader getAll
 
    export const loader: LoaderFunction = async () => {
     let Lodgings = null
@@ -15,6 +15,7 @@ import {Lodging} from '../Type/Lodging'
      return Lodgings
    };
 
+  // ConnectionAPI:  Loader Get By Id
 
    export const loaderId: LoaderFunction = async ({ params }) => {
     const { id } = params;

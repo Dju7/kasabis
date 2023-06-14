@@ -29,7 +29,7 @@ function About () {
     return(
         <main>
             <Head />
-            <section className="flex flex-col max-w-5xl gap-7 p-1 my-10 mx-auto">
+            <section className="flex flex-col max-w-5xl gap-5 p-1 my-12 mx-auto">
         {data.map((data) => {
           return (
             <Collapse key={data.id} title={data.title}>

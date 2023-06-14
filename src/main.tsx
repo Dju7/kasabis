@@ -15,7 +15,7 @@ const Router = createBrowserRouter (
     <Route path='/' element={<App />}>
       <Route index element={<Home />} loader={homeloader} />
       <Route path="About" element={<About />} />
-      <Route path="Logements/:id" element={<Logements />} loader={lodgingloader}  />
+      <Route path="Logements/:id" element={<Logements />} loader={lodgingloader} />
       <Route path="*" element={<Error />} />
     </Route>
   )

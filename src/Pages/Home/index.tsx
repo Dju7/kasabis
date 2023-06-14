@@ -12,6 +12,16 @@ interface Lodging {
   
   function Home() {
     const lodgings = useLoaderData() as Lodging[];
+    if (!lodgings){
+      return (
+        <div>
+      <Banner />
+      <section className='mt-10'>
+        <h1 className='text-3xl text-primary'>Site en maintenance, veuillez revenir plus tard SVP...</h1>
+      </section>
+    </div>
+      )
+    }
   return (
     <div>
       <Banner />
